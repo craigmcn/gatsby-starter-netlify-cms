@@ -12,6 +12,18 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: "news"
+    label: "News"
+    folder: "src/pages/news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "news-post"}
+      - {label: "Group", name: "group", widget: "select", options: ["", "PPF House", "Tim Shia", "Howie Shia", "LEO37", "The Worst Pop Band Ever", "Jazz 4 Juniors"]}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Include on PPF House News page?", name: "newsgeneral", widget: "boolean"}
+      - {label: "Content", name: "content", widget: "markdown"}
+
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
