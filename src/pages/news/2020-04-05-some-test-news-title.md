@@ -7,4 +7,4 @@ newsgeneral: false
 ---
 Test news content
 
-![](https://res.cloudinary.com/dwhav0odz/image/upload/c_scale,w_538/v1586898807/sample.jpg)
+![](https://res.cloudinary.com/dwhav0odz/image/upload/v1586898807/sample.jpg)
