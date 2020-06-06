@@ -18,15 +18,15 @@ export default class Contact extends React.Component {
     this.state = {}
   }
 
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value })
   }
 
-  handleAttachment = e => {
+  handleAttachment = (e) => {
     this.setState({ [e.target.name]: e.target.files[0] })
   }
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault()
     const form = e.target
     fetch('/', {
@@ -37,7 +37,7 @@ export default class Contact extends React.Component {
       }),
     })
       .then(() => navigate(form.getAttribute('action')))
-      .catch(error => alert(error))
+      .catch((error) => alert(error))
   }
 
   render() {
@@ -56,10 +56,11 @@ export default class Contact extends React.Component {
                 onSubmit={this.handleSubmit}
               >
                 {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+                {/* eslint-disable-next-line */}
                 <input type="hidden" name="form-name" value="file-upload" />
                 <div hidden>
                   <label>
-                    Don’t fill this out:{' '}
+                    Don’t fill this out: {/* eslint-disable-next-line */}
                     <input name="bot-field" onChange={this.handleChange} />
                   </label>
                 </div>
@@ -68,6 +69,7 @@ export default class Contact extends React.Component {
                     Your name
                   </label>
                   <div className="control">
+                    {/* eslint-disable-next-line */}
                     <input
                       className="input"
                       type={'text'}
@@ -81,6 +83,7 @@ export default class Contact extends React.Component {
                 <div className="field">
                   <div className="file">
                     <label className="file-label">
+                      {/* eslint-disable-next-line */}
                       <input
                         className="file-input"
                         type="file"

@@ -4,7 +4,7 @@ import Layout from '../../components/Layout'
 
 function encode(data) {
   return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&')
 }
 
@@ -14,11 +14,11 @@ export default class Index extends React.Component {
     this.state = { isValidated: false }
   }
 
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value })
   }
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault()
     const form = e.target
     fetch('/', {
@@ -30,7 +30,7 @@ export default class Index extends React.Component {
       }),
     })
       .then(() => navigate(form.getAttribute('action')))
-      .catch(error => alert(error))
+      .catch((error) => alert(error))
   }
 
   render() {
@@ -49,10 +49,11 @@ export default class Index extends React.Component {
                 onSubmit={this.handleSubmit}
               >
                 {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+                {/* eslint-disable-next-line */}
                 <input type="hidden" name="form-name" value="contact" />
                 <div hidden>
                   <label>
-                    Don’t fill this out:{' '}
+                    Don’t fill this out: {/* eslint-disable-next-line */}
                     <input name="bot-field" onChange={this.handleChange} />
                   </label>
                 </div>
@@ -61,6 +62,7 @@ export default class Index extends React.Component {
                     Your name
                   </label>
                   <div className="control">
+                    {/* eslint-disable-next-line */}
                     <input
                       className="input"
                       type={'text'}
@@ -76,6 +78,7 @@ export default class Index extends React.Component {
                     Email
                   </label>
                   <div className="control">
+                    {/* eslint-disable-next-line */}
                     <input
                       className="input"
                       type={'email'}
@@ -91,6 +94,7 @@ export default class Index extends React.Component {
                     Message
                   </label>
                   <div className="control">
+                    {/* eslint-disable-next-line */}
                     <textarea
                       className="textarea"
                       name={'message'}
