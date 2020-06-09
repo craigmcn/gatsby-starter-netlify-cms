@@ -3,7 +3,7 @@ templateKey: news-post
 group: The Worst Pop Band Ever
 title: Some test news title
 date: 2020-04-14T21:31:43.692Z
-newsgeneral: false
+newsgeneral: true
 ---
 Test news content
 
